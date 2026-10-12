@@ -301,8 +301,14 @@ pub fn mono() -> FontId {
     FontId::new(12.0, FontFamily::Monospace)
 }
 
-/// Load a system UI font at run time when one is installed (not bundled), else keep egui's.
+/// Noto Sans Thai (SIL OFL 1.1, `assets/fonts/OFL-NotoSansThai.txt`): the bundled UI fallback for
+/// Thai text. Interface only; drawing text keeps its own fonts.
+const NOTO_SANS_THAI: &[u8] = include_bytes!("../../../assets/fonts/NotoSansThai-Regular.ttf");
+
+/// Load a system UI font at run time when one is installed (not bundled), else keep egui's; in
+/// every build (native and web) add the bundled Noto Sans Thai as a fallback.
 pub fn install_fonts(ctx: &egui::Context) {
+    let mut fonts = egui::FontDefinitions::default();
     #[cfg(not(target_arch = "wasm32"))]
     {
         let candidates: &[&str] = if cfg!(target_os = "macos") {
@@ -317,7 +323,6 @@ pub fn install_fonts(ctx: &egui::Context) {
                 "/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf",
             ]
         };
-        let mut fonts = egui::FontDefinitions::default();
         for path in candidates {
             if let Ok(bytes) = std::fs::read(path) {
                 fonts.font_data.insert("system-ui".into(), std::sync::Arc::new(egui::FontData::from_owned(bytes)));
@@ -327,10 +332,23 @@ pub fn install_fonts(ctx: &egui::Context) {
                 break;
             }
         }
-        ctx.set_fonts(fonts);
     }
-    #[cfg(target_arch = "wasm32")]
-    let _ = ctx;
+    add_thai_fallback(&mut fonts);
+    ctx.set_fonts(fonts);
+}
+
+/// Register Noto Sans Thai as a fallback, never the primary font: in Proportional after the
+/// primary fonts (just before egui's emoji fallbacks), in Monospace last.
+fn add_thai_fallback(fonts: &mut egui::FontDefinitions) {
+    const NAME: &str = "NotoSansThai-Regular";
+    fonts.font_data.insert(NAME.into(), std::sync::Arc::new(egui::FontData::from_static(NOTO_SANS_THAI)));
+    if let Some(f) = fonts.families.get_mut(&FontFamily::Proportional) {
+        let at = f.iter().position(|n| n.starts_with("NotoEmoji") || n.starts_with("emoji")).unwrap_or(f.len());
+        f.insert(at, NAME.into());
+    }
+    if let Some(f) = fonts.families.get_mut(&FontFamily::Monospace) {
+        f.push(NAME.into());
+    }
 }
 
 /// egui's visuals for `theme`, from its tokens.

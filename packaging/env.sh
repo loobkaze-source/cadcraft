@@ -53,10 +53,15 @@ copy_docs() {
   copy_font_licences "$dest"
 }
 
-# Builds made with craft-fonts (CRAFT_FONTS_DIR, set by the release workflow) embed its fonts, so
-# the package carries their licences as OFL-<family-dir>.txt. Nothing without CRAFT_FONTS_DIR.
+# Every build embeds the bundled UI font (assets/fonts, Noto Sans Thai), so the package carries
+# its licence (OFL-NotoSansThai.txt). Builds made with craft-fonts (CRAFT_FONTS_DIR, set by the
+# release workflow) also embed its fonts, so the package carries their licences as
+# OFL-<family-dir>.txt.
 copy_font_licences() {
   local dest="$1" f
+  for f in "$ROOT"/assets/fonts/OFL-*.txt; do
+    if [ -f "$f" ]; then cp "$f" "$dest/"; fi
+  done
   [ -n "${CRAFT_FONTS_DIR:-}" ] || return 0
   for f in "$CRAFT_FONTS_DIR"/fonts/*/OFL.txt; do
     if [ -f "$f" ]; then cp "$f" "$dest/OFL-$(basename "$(dirname "$f")").txt"; fi

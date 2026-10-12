@@ -35,7 +35,7 @@ impl NativeMenu {
         let mut counter = 0usize;
         let app_menu = Submenu::new("Unigreen CAD", true);
         let about = MenuItem::with_id("cc-about", i18n::tr(language, "About Unigreen CAD"), true, None);
-        let discord = MenuItem::with_id("cc-discord", i18n::tr(language, "Join the ArtCraft Discord…"), true, None);
+        let discord = MenuItem::with_id("cc-discord", i18n::tr(language, "Contact Unigreen on LINE…"), true, None);
         let predefined = vec![
             ("Services", PredefinedMenuItem::services(Some(i18n::tr(language, "Services")))),
             ("Hide Unigreen CAD", PredefinedMenuItem::hide(Some(i18n::tr(language, "Hide Unigreen CAD")))),
@@ -53,7 +53,7 @@ impl NativeMenu {
             }
         }
         items.insert("cc-about".into(), ("ui.dialog.about".into(), "About Unigreen CAD".into(), about));
-        items.insert("cc-discord".into(), ("ui.discord".into(), "Join the ArtCraft Discord…".into(), discord));
+        items.insert("cc-discord".into(), ("ui.discord".into(), "Contact Unigreen on LINE…".into(), discord));
         items.insert("cc-settings".into(), ("options".into(), "Settings...".into(), settings));
         let _ = menu.append(&app_menu);
         for (title, entries) in menus::tree(app) {
@@ -70,7 +70,7 @@ impl NativeMenu {
         while let Ok(ev) = MenuEvent::receiver().try_recv() {
             if let Some((cmd, _, _)) = self.items.get(ev.id.as_ref()) {
                 if cmd == "ui.discord" {
-                    ctx.open_url(egui::OpenUrl::new_tab("https://discord.gg/artcraft"));
+                    ctx.open_url(egui::OpenUrl::new_tab("https://line.me/R/ti/p/@unigreen.power"));
                 } else {
                     menus::activate(app, &cmd.clone());
                 }

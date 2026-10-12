@@ -320,8 +320,8 @@ fn about(ctx: &egui::Context, open: &mut bool) {
                     ui.label(crate::tl!("Computer-aided design and drafting: an open-source, clean-room CAD application written in pure Rust."));
                     ui.add_space(6.0);
                     ui.label(RichText::new(crate::tl!("Unigreen CAD, based on CADCraft by the ArtCraft team and community.")).color(t.text_dim));
-                    ui.hyperlink_to("getartcraft.com/apps/cadcraft", "https://getartcraft.com/apps/cadcraft");
-                    ui.hyperlink_to(crate::tl!("Join us on Discord"), "https://discord.gg/artcraft");
+                    ui.hyperlink_to("unigreenpower.co.th", "https://unigreenpower.co.th");
+                    ui.hyperlink_to(crate::tl!("Contact Unigreen on LINE"), "https://line.me/R/ti/p/@unigreen.power");
                     ui.add_space(6.0);
                     ui.label(RichText::new(crate::tl!("MIT OR Apache-2.0. Not affiliated with Autodesk, Inc.")).small().color(t.text_faint));
                 }

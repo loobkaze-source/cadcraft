@@ -388,3 +388,22 @@ fn default_fonts_cover_every_ukrainian_letter_in_the_catalog() {
         }
     });
 }
+
+#[test]
+fn installed_ui_fonts_fall_back_to_noto_sans_thai() {
+    let ctx = egui::Context::default();
+    crate::theme::install_fonts(&ctx);
+    let mut output = ctx.run_ui(Default::default(), |_| {});
+    output.textures_delta.clear();
+    ctx.fonts_mut(|view| {
+        for family in [egui::FontFamily::Proportional, egui::FontFamily::Monospace] {
+            let names = view.definitions().families[&family].clone();
+            assert_ne!(names.first().map(String::as_str), Some("NotoSansThai-Regular"), "{family:?}: {names:?}");
+            assert!(names.iter().any(|n| n == "NotoSansThai-Regular"), "{family:?}: {names:?}");
+            let mut font = view.fonts.font(&family);
+            for c in "ภาษาไทย".chars() {
+                assert!(font.characters().contains_key(&c), "missing {c} in {family:?}");
+            }
+        }
+    });
+}

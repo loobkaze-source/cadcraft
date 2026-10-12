@@ -112,6 +112,10 @@ foreach ($f in 'README.md', 'LICENSE', 'LICENSE-MIT', 'LICENSE-APACHE') {
   $p = Join-Path $Root $f
   if (Test-Path $p) { Copy-Item $p $Portable }
 }
+# Every build embeds the bundled UI font (assets/fonts, Noto Sans Thai): ship its licence.
+foreach ($ofl in Get-ChildItem -Path (Join-Path $Root 'assets\fonts\OFL-*.txt') -ErrorAction SilentlyContinue) {
+  Copy-Item $ofl.FullName $Portable
+}
 # Builds made with craft-fonts (CRAFT_FONTS_DIR) embed its fonts: ship their licences.
 if ($env:CRAFT_FONTS_DIR) {
   foreach ($ofl in Get-ChildItem -Path (Join-Path $env:CRAFT_FONTS_DIR 'fonts\*\OFL.txt') -ErrorAction SilentlyContinue) {

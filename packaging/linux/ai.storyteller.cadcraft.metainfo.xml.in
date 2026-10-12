@@ -20,10 +20,10 @@
   <launchable type="desktop-id">ai.storyteller.cadcraft.desktop</launchable>
   <icon type="stock">ai.storyteller.cadcraft</icon>
   <!-- Only url types known to appstream 0.15 (Ubuntu 22.04, where CI validates): no vcs-browser. -->
-  <url type="homepage">https://getartcraft.com/apps/cadcraft</url>
-  <url type="bugtracker">https://github.com/storytold/cadcraft/issues</url>
-  <url type="help">https://github.com/storytold/cadcraft</url>
-  <url type="contact">https://discord.gg/artcraft</url>
+  <url type="homepage">https://unigreenpower.co.th</url>
+  <url type="bugtracker">https://github.com/loobkaze-source/cadcraft/issues</url>
+  <url type="help">https://line.me/R/ti/p/@unigreen.power</url>
+  <url type="contact">https://line.me/R/ti/p/@unigreen.power</url>
   <categories>
     <category>Graphics</category>
     <category>Engineering</category>
@@ -37,7 +37,7 @@
   <screenshots>
     <screenshot type="default">
       <caption>A mechanical part drawing with dimensions, hatching and layers</caption>
-      <image>https://raw.githubusercontent.com/storytold/cadcraft/main/docs/images/ui-bracket.png</image>
+      <image>https://raw.githubusercontent.com/loobkaze-source/cadcraft/main/docs/images/ui-bracket.png</image>
     </screenshot>
   </screenshots>
   <branding>

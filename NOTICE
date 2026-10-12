@@ -15,14 +15,21 @@ Mozilla Public License 2.0 and is used unmodified as a separate library (crates/
 is available from crates.io and the repository above.
 
 
-None: every bundled asset is original to CADCraft (icons, drafting font, hatch patterns and
-linetypes are drawn or defined in code). The per-file list is in ATTRIBUTION.md. Builds made with
-the optional craft-fonts input (CRAFT_FONTS_DIR) embed the fonts listed in its ATTRIBUTION.md,
-each under the SIL Open Font License 1.1.
+Every bundled asset is original to CADCraft (icons, drafting font, hatch patterns and linetypes
+are drawn or defined in code), except the font below and the Unigreen brand (see the end of this
+file). The per-file list is in ATTRIBUTION.md.
+
+- Noto Sans Thai (assets/fonts/NotoSansThai-Regular.ttf), Copyright 2022 The Noto Project Authors
+  (https://github.com/notofonts/thai), licensed under the SIL Open Font License 1.1
+  (assets/fonts/OFL-NotoSansThai.txt). Bundled by Unigreen CAD as the interface fallback for Thai.
+
+Builds made with the optional craft-fonts input (CRAFT_FONTS_DIR) embed the fonts listed in its
+ATTRIBUTION.md, each under the SIL Open Font License 1.1.
 
 CADCraft is an independent project and is not affiliated with, sponsored by or endorsed by
 Autodesk, Inc. AutoCAD and DWG are trademarks of Autodesk, Inc.
 
 Unigreen CAD is a modified version of CADCraft distributed by Unigreen Power Co., Ltd. Modifications:
-product name, app icons, colour theme and packaging metadata. The Unigreen name and logo are
-trademarks of Unigreen Power Co., Ltd. and are not licensed under MIT or Apache-2.0.
+product name, app icons, colour theme, help and contact links, a bundled Thai interface font
+(Noto Sans Thai) and packaging metadata. The Unigreen name and logo are trademarks of Unigreen
+Power Co., Ltd. and are not licensed under MIT or Apache-2.0.
