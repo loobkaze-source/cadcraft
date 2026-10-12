@@ -28,7 +28,7 @@
 	= Equals	= Gleich
 	> Greater than	> Größer als
 	About	Über
-	About CADCraft	Über CADCraft
+	About Unigreen CAD	Über Unigreen CAD
 	Absolute	Absolut
 	Add Leader	Führungslinie hinzufügen
 	Align	Ausrichten
@@ -83,7 +83,7 @@
 	ByBlock	VonBlock
 	ByColor	VonFarbe
 	ByLayer	VonLayer
-	CADCraft Help	CADCraft-Hilfe
+	Unigreen CAD Help	Hilfe zu Unigreen CAD
 	Cancel	Abbrechen
 	Cartesian (x, y)	Kartesisch (x, y)
 	Center	Zentrum
@@ -486,7 +486,7 @@
 	Offset	Versatz
 	On	Ein
 	On/Off	Ein/Aus
-	One of the Crafting Apps by the ArtCraft team and community.	Eine der Crafting Apps vom ArtCraft-Team und seiner Community.
+	Unigreen CAD, based on CADCraft by the ArtCraft team and community.	Unigreen CAD, basierend auf CADCraft vom ArtCraft-Team und seiner Community.
 	Open (⌘O)	Öffnen (⌘O)
 	Open Sample Drawing	Beispielzeichnung öffnen
 	Open sample drawing	Beispielzeichnung öffnen
@@ -586,7 +586,7 @@
 	Quick Select Properties	Schnellauswahl-Eigenschaften
 	Quick Select...	Schnellauswahl...
 	QuickCalc	QuickCalc
-	Quit CADCraft	CADCraft beenden
+	Quit Unigreen CAD	Unigreen CAD beenden
 	Radius	Radius
 	Raster Image	Rasterbild
 	Ray	Strahl
@@ -990,7 +990,7 @@
 @plural	{n} contributor	{n} Mitwirkender|{n} Mitwirkende
 	Drawing as bytes	Zeichnung als Bytes
 	Services	Dienste
-	Hide CADCraft	CADCraft ausblenden
+	Hide Unigreen CAD	Unigreen CAD ausblenden
 	Hide Others	Andere ausblenden
 	Accessibility	Bedienungshilfen
 	Show System Cursor	Systemzeiger anzeigen

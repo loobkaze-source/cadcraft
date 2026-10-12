@@ -62,7 +62,7 @@ mod native {
     /// runaway conversion stops at the limit instead of filling memory first.
     pub fn dwg_to_dxf_with(bytes: &[u8], limits: Limits) -> Result<Vec<u8>, String> {
         if bytes.len() > limits.max_dwg_bytes {
-            return Err(format!("DWG: the file is {}, larger than the {} CADCraft opens", mb(bytes.len() as u64), mb(limits.max_dwg_bytes as u64)));
+            return Err(format!("DWG: the file is {}, larger than the {} Unigreen CAD opens", mb(bytes.len() as u64), mb(limits.max_dwg_bytes as u64)));
         }
         let mut doc = std::panic::catch_unwind(|| acadrust::DwgReader::from_stream(Cursor::new(bytes)).read())
             .map_err(|_| "the DWG reader failed on this file".to_string())?
@@ -252,7 +252,7 @@ pub use native::{dwg_to_dxf, dwg_to_dxf_with, dxf_to_dwg, dxf_to_dwg_as};
 #[cfg_attr(target_arch = "wasm32", allow(dead_code))]
 fn unsupported(version: &str) -> String {
     let list: Vec<&str> = VERSIONS.iter().map(|(_, year)| *year).collect();
-    format!("DWG version `{version}` can't be written (CADCraft writes {})", list.join(", "))
+    format!("DWG version `{version}` can't be written (Unigreen CAD writes {})", list.join(", "))
 }
 
 #[cfg(target_arch = "wasm32")]

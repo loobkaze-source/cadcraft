@@ -736,7 +736,7 @@ fn plot(app: &mut CadApp, ctx: &egui::Context, open: &mut bool) -> Action {
     egui::Window::new("Plot").open(open).collapsible(false).resizable(false).show(ctx, |ui| {
         egui::Grid::new("plot_target").num_columns(2).spacing(vec2(10.0, 6.0)).show(ui, |ui| {
             ui.label("Printer/plotter");
-            ui.label("PDF (vector)").on_hover_text("CADCraft plots to vector PDF files");
+            ui.label("PDF (vector)").on_hover_text("Unigreen CAD plots to vector PDF files");
             ui.end_row();
             ui.label("Layout");
             egui::ComboBox::from_id_salt("plot_layout").selected_text(st.target.as_str()).width(190.0).show_ui(ui, |ui| {

@@ -295,7 +295,7 @@ fn units(app: &mut CadApp, ctx: &egui::Context, open: &mut bool) {
 fn about(ctx: &egui::Context, open: &mut bool) {
     let t = Tokens::get();
     let tab_id = egui::Id::new("about_tab");
-    egui::Window::new(crate::tl!("About CADCraft"))
+    egui::Window::new(crate::tl!("About Unigreen CAD"))
         .id(egui::Id::new("About CADCraft"))
         .open(open)
         .default_size(vec2(640.0, 420.0))
@@ -315,11 +315,11 @@ fn about(ctx: &egui::Context, open: &mut bool) {
                 1 => crate::credits::contributors_ui(ui),
                 2 => crate::credits::models_ui(ui),
                 _ => {
-                    ui.heading(crate::tl!("CADCraft"));
+                    ui.heading(crate::tl!("Unigreen CAD"));
                     ui.label(crate::tf!("Version {version}", version = env!("CARGO_PKG_VERSION")));
                     ui.label(crate::tl!("Computer-aided design and drafting: an open-source, clean-room CAD application written in pure Rust."));
                     ui.add_space(6.0);
-                    ui.label(RichText::new(crate::tl!("One of the Crafting Apps by the ArtCraft team and community.")).color(t.text_dim));
+                    ui.label(RichText::new(crate::tl!("Unigreen CAD, based on CADCraft by the ArtCraft team and community.")).color(t.text_dim));
                     ui.hyperlink_to("getartcraft.com/apps/cadcraft", "https://getartcraft.com/apps/cadcraft");
                     ui.hyperlink_to(crate::tl!("Join us on Discord"), "https://discord.gg/artcraft");
                     ui.add_space(6.0);

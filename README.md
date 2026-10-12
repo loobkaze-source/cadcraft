@@ -1,11 +1,20 @@
 <p align="center">
-  <a href="https://getartcraft.com/">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="docs/brand/artcraft-logo-white.svg">
-      <img alt="ArtCraft" src="docs/brand/artcraft-logo.svg" width="200">
-    </picture>
-  </a>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/brand/unigreen-logo-white.svg">
+    <img alt="Unigreen" src="assets/brand/unigreen-logo.svg" width="200">
+  </picture>
 </p>
+
+# Unigreen CAD
+
+Unigreen CAD is Unigreen Power's distribution of [CADCraft](https://github.com/storytold/cadcraft),
+an open-source computer-aided design and drafting application: a clean-room reimplementation of
+Autodesk AutoCAD, rebuilt in pure Rust. Based on CADCraft by the ArtCraft team.
+
+> **Upstream:** the rest of this README is CADCraft's upstream README, kept unchanged. Unigreen CAD
+> changes only the product name, app icons, colour theme and packaging metadata; see [NOTICE](NOTICE).
+
+---
 
 <h1 align="center">CADCraft</h1>
 
@@ -380,7 +389,6 @@ Forks and modified versions must remove them.
 <sub>Autodesk, AutoCAD and DWG are trademarks or registered trademarks of Autodesk, Inc. in the United States and/or other countries. CADCraft is an independent, open-source project and is not affiliated with, sponsored by or endorsed by Autodesk, Inc.; these names are used only to describe the workflows and file formats it is compatible with.</sub>
 
 <p align="center">
-  <a href="https://getartcraft.com/"><img alt="ArtCraft" src="docs/brand/artcraft-mark.svg" width="28"></a><br>
   <sub>Made by the <a href="https://getartcraft.com/">ArtCraft</a> team and community.</sub>
 </p>
 
